@@ -25,6 +25,7 @@
     "url": "https://github.com/lukechu10/Fomantic-UI-web-components/issues"
   },
   "homepage": "https://github.com/lukechu10/Fomantic-UI-web-components#readme",
+  "module": "dist/bundle.js",
   "dependencies": {
     "fomantic-ui-css": "^2.8.7",
     "lit-element": "^2.4.0"
