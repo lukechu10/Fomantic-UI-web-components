@@ -31,13 +31,13 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }) => html`
           : html`${Button({
               size: 'small',
               onClick: onLogin,
-              label: 'Log in',
+              label: 'Log in'
             })}
             ${Button({
               primary: true,
               size: 'small',
               onClick: onCreateAccount,
-              label: 'Sign up',
+              label: 'Sign up'
             })}`}
       </div>
     </div>

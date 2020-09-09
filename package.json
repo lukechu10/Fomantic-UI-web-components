@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .ts",
     "build": "rollup --config",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -28,7 +29,8 @@
   "module": "dist/bundle.js",
   "dependencies": {
     "fomantic-ui-css": "^2.8.7",
-    "lit-element": "^2.4.0"
+    "lit-element": "^2.4.0",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
@@ -36,12 +38,16 @@
     "@storybook/addon-essentials": "^6.0.21",
     "@storybook/addon-links": "^6.0.21",
     "@storybook/web-components": "^6.0.21",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
     "babel-loader": "^8.1.0",
+    "eslint": "^7.8.1",
     "lit-html": "^1.3.0",
     "react-is": "^16.13.1",
     "rollup": "^2.26.11",
     "rollup-plugin-minify-html-literals": "^1.2.5",
     "rollup-plugin-typescript2": "^0.27.2",
+    "semistandard": "^14.2.3",
     "typescript": "^4.0.2"
   }
 }
