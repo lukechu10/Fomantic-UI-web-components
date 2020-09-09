@@ -5,15 +5,14 @@ import '../components/Button';
 /**
  * Primary UI component for user interaction
  */
-const Button = ({ appearance, disabled, label, onClick }) => {
-  return html`
-    <ui-button
-      ?disabled=${disabled}
-      appearance=${appearance}
-      @click=${onClick}
-    >${label}</ui-button>
-  `;
-};
+const ButtonTemplate = ({ appearance, disabled, label, onClick }) => html`
+  <ui-button
+    ?disabled=${disabled}
+    appearance=${appearance}
+    @click=${onClick}>
+    ${label}
+  </ui-button>
+`;
 
 export default {
   title: 'Elements/Button',
@@ -34,24 +33,31 @@ export default {
   }
 };
 
-export const Standard = Button.bind({});
+export const Standard = ButtonTemplate.bind({});
 Standard.args = {
 };
 
-export const Primary = Button.bind({});
+export const Primary = ButtonTemplate.bind({});
 Primary.args = {
   appearance: 'primary',
   label: 'Primary Button'
 };
 
-export const Secondary = Button.bind({});
+export const Secondary = ButtonTemplate.bind({});
 Secondary.args = {
   appearance: 'secondary',
   label: 'Secondary Button'
 };
 
-export const Tertiary = Button.bind({});
+export const Tertiary = ButtonTemplate.bind({});
 Tertiary.args = {
   appearance: 'tertiary',
   label: 'Tertiary Button'
 };
+
+export const ButtonGroup = () => html`
+  <ui-button-group
+    .buttons=${['One', 'Two', 'Three']}>
+  </ui-button-group>
+`;
+ButtonGroup.args = {};

@@ -25,3 +25,20 @@ export class Button extends LitElement {
     void this.requestUpdate();
   }
 }
+
+@customElement('ui-button-group')
+export class Buttons extends LitElement {
+  public static styles: CSSResultArray = [style];
+
+  @property({type: Array, attribute: 'buttons'}) public buttons: string[] = [];
+
+  protected render(): TemplateResult {
+    return html`
+      <div class="ui buttons">
+        ${this.buttons.map(str => html`
+          <div class="ui button">${str}</div>
+        `)}
+      </div>
+    `;
+  }
+}
