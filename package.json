@@ -8,7 +8,7 @@
     "lint": "eslint . --ext .ts",
     "build": "rollup --config",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook --scripts-prepend-node-path",
     "deploy-storybook": "storybook-to-ghpages --out=dist/storybook"
   },
   "repository": {
