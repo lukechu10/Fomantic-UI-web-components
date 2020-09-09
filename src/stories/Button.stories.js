@@ -1,34 +1,57 @@
-import { Button } from './Button';
+import { html } from 'lit-html';
+
+import '../components/Button';
+
+/**
+ * Primary UI component for user interaction
+ */
+const Button = ({ appearance, disabled, label, onClick }) => {
+  return html`
+    <ui-button
+      ?disabled=${disabled}
+      appearance=${appearance}
+      @click=${onClick}
+    >${label}</ui-button>
+  `;
+};
 
 export default {
-  title: 'Example/Button',
+  title: 'Elements/Button',
+  component: 'ui-button',
   argTypes: {
-    backgroundColor: { control: 'color' },
-    onClick: { action: 'onClick' }
+    onClick: { action: 'onClick' },
+    appearance: {
+      control: {
+        type: 'inline-radio',
+        options: ['neutral', 'primary', 'secondary', 'tertiary']
+      }
+    }
+  },
+  args: {
+    disabled: false,
+    label: 'Button',
+    appearance: 'neutral'
   }
 };
 
-const Template = (args) => Button(args);
+export const Standard = Button.bind({});
+Standard.args = {
+};
 
-export const Primary = Template.bind({});
+export const Primary = Button.bind({});
 Primary.args = {
-  primary: true,
-  label: 'Button'
+  appearance: 'primary',
+  label: 'Primary Button'
 };
 
-export const Secondary = Template.bind({});
+export const Secondary = Button.bind({});
 Secondary.args = {
-  label: 'Button'
+  appearance: 'secondary',
+  label: 'Secondary Button'
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button'
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button'
+export const Tertiary = Button.bind({});
+Tertiary.args = {
+  appearance: 'tertiary',
+  label: 'Tertiary Button'
 };
