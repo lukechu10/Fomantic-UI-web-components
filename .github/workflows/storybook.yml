@@ -23,14 +23,4 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
-    - run: yarn build-storybook -o ./dist/storybook
-    - name: Create .nojekyll file
-      run: touch dist/storybook/.nojekyll
-    - name: Publish to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3.6.4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: gh_pages
-        force_orphan: true
-        publish_dir: dist/storybook/
-        enable_jekyll: false
+    - run: yarn deploy-storybook -- --ci
